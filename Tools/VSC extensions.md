@@ -1,44 +1,46 @@
 # General
-Align
-Auto Rename Tag
-Beatufy
-Bracket Pair Colorizer
-Change case
-Document this (JSDoc)
-EditorConfig for VSC
+- Align
+- Auto Rename Tag
+- Beatufy
+- Bracket Pair Colorizer
+- Change case
+- Document this (JSDoc)
+- EditorConfig for VSC
 
-HTML Snippets
-HTMLHint
-Javascript snippet pack
-Live server
-Lorem ipsum
-Project Manager
-Relative Path
-SCSS INtellisense
-Seach Docsets
+- HTML Snippets
+- HTMLHint
+- Javascript snippet pack
+- Lorem ipsum
+- Project Manager
+- Relative Path
+- SCSS INtellisense
+- Seach Docsets
 
-Settings Sync ??
-Sort Lines
-TODO Highlights
-Thunder client us Rest API
+- Settings Sync ??
+- Sort Lines
+- TODO Highlights
+- Live server
+- Thunder client us Rest API
 
 # Themes, Icons
-Monokai Pro
-VSCODE Icons
+- Monokai Pro
+- VSCODE Icons
 
 # Angular
-Angular language service
-Angular v7 Snippets
-Auto Import
+- Angular language service
+- Angular v7 Snippets
+- Auto Import
+- Nx console
+- 
 
 # Typescript
-JSON to TS
+- JSON to TS
 
 # Vue.js
-Vetur
+- Vetur
 
 # Git
-Git History
-GitLens
+- Git History
+- GitLens
 
 
