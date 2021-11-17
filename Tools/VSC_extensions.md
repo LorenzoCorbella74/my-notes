@@ -27,11 +27,11 @@
 - VSCODE Icons
 
 # Angular
+- [Angular Essentials](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials&wt.mc_id=devto-blog-jopapa) 
+- [Nx Console](https://nx.dev/) permette di avere tutti i comandi della CLI in una interfaccia dell'IDE.
 - Angular language service
 - Angular v7 Snippets
 - Auto Import
-- Nx console
-- 
 
 # Typescript
 - JSON to TS
