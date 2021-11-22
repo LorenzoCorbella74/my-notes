@@ -1,3 +1,5 @@
+[Back to index](README.md)
+
 # TypeScript
 
 - [Sito ufficiale typescript](https://www.typescriptlang.org)

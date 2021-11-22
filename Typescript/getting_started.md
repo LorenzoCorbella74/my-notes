@@ -1,3 +1,5 @@
+[Back to index](README.md)
+
 # TypeScript Getting Started
 
 Appunti del corso [TypeScript Getting Started](https://app.pluralsight.com/library/courses/getting-started-typescript/table-of-contents). 

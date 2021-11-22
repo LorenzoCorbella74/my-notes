@@ -1,3 +1,7 @@
+[Back to index](README.md)
+
+# Notes
+
 In typescript l'idea è quando abbiamo chiaro lo stato di una applicazione dovremmo poi definire il tipo di ogni variabile dello stato e come questo viene manipolato da funzioni e metodi ognuno con i propri tipi di input e di output. Per non moltiplicare i tipi l'idea è quella di estendere i tipi dello stato con tipi dell'ui.
 
 
@@ -442,3 +446,13 @@ function getSize(animal: Animal) {
 
 # Enum
 [typescript-enums](https://medium.com/jspoint/typescript-enums-af03567d662)
+
+
+## Rimuovere errori
+```typescript
+// 2) Eliminare l'errore
+if (false) {
+    // @ts-ignore
+    console.log('x');
+}
+```
