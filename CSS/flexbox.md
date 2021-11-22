@@ -1,3 +1,5 @@
+[Back to index](README.md)
+
 # FLEXBOX
 Con [flexbox](https://caniuse.com/#feat=flexbox) ci sta sempre un 'contenitore' che prende tutto lo spazio (come block element) e degli 'elementi contenuti' che se figli diretti diventano automaticamente dei flex item. Di default il contenitore disporrà gli elementi secondo l'asse orizzontale principale (mentre l'asse cross è quello verticale) e l'altezza del contenitore sarà pari alla altezza massima dei figli in base ognuno al proprio contenuto.
 

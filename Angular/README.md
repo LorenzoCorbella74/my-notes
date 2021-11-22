@@ -6,3 +6,4 @@
 - [Angular Forms](./angular-forms.md)
 - [Angular Event Systems](./angular-pubsub.md)
 - [Angular Architecture for big apps](./angular-architecture.md)
+- [Angular & NgRX](./angular-ngrx.md)

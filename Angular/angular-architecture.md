@@ -1,3 +1,5 @@
+[Back to index](README.md)
+
 # Angular architecture
 Quando si pianifica una applicazione si deve considerare: 
 - come strutturare features e moduli autoconsistenti ed indipendenti
