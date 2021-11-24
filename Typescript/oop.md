@@ -126,3 +126,27 @@ export interface AccountSettings {
 // E' possibile mescolare (UNIRE) delle interfacce con la key "extends"
 export interface Account extends AccountSettings, DepositWithdrawal {}
 ```
+
+`extends`  si usa solo con le interfacce, ma è inoltre possibile estendere dei tipi con: 
+```typescript
+type Event = {
+   name: string;
+   dateCreated: string;
+   type: string;
+}
+
+interface UserEvent extends Event {
+   UserId: string; 
+}
+```
+Oppure [unire due tipi](https://stackoverflow.com/a/41385149) con l'operatore `&`:
+```typescript
+type TypeA = {
+    nameA: string;
+};
+type TypeB = {
+    nameB: string;
+};
+export type TypeC = TypeA & TypeB;
+export type TypeC = TypeA & { prop1: string};
+```

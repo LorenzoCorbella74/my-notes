@@ -14,7 +14,7 @@ Il `Subscriber` è un tipo di Observer che ha in + la possibilità di fare l'uns
 const observer = {
     next: (res)=> console.log(res),
     error: (error)=> console.log(error)//
-    complete: ()=> console.log('Done)//
+    complete: ()=> console.log('Done')//
 }
   ```
 
@@ -89,7 +89,6 @@ Con l'async pipe non c'è bisogno di fare nè il subscribe nè l'unsubscribe, mi
 Le chiamate tramite httpService ritornano un Observable così detto COLD che non emette finchè non c'è una sottoscrizione (Unicast) mentre i HOT Observable, come i Subject e BehaviouralSubject emettono anche senza sottoscrittori (e sono generalmente Multicast, cioè danno a tutti i sottoscrittori):
 
 ```typescript
-
 // COLD
 products$ = this.http.get<Product[]>(url).subscribe()
 
@@ -285,7 +284,7 @@ L'operatore ***a$.pipe(withLatestFrom([b$,c$])*** permette di combinare  gli ult
 
 
 # Reactive to actions
-L'utente esegue delle azioni. Tramite RxJS si combina degli stream per reagire ad azioni. E' opportuno fare una distinzione tra DATA STREAM (ottenuti da http.GET) ed ACTION STREAM (ottenuti da HTTP.POST)
+L'utente esegue delle azioni. Tramite RxJS si combina degli stream per reagire ad azioni. E' opportuno fare una distinzione tra DATA STREAM (ottenuti da http.GET) ed ACTION STREAM (ottenuti da interazione utente)
 
 L'operatore di trasformazione ***filter(item=> item==='apple')*** permette di filtrare gli elementi che soddisfano una predicate fn. Prendendo un input stream, si sottoscrive e crea un output stream.
 
@@ -444,8 +443,8 @@ combine2Techniques() {
 Altra tecnica è quella di utilizzare l'operatore toArray per combinare + stream:
 ```typescript
 // Currently selected product
-  // Used in both List and Detail pages,
-  // so use the shareReply to share it with any component that uses it
+// Used in both List and Detail pages,
+// so use the shareReply to share it with any component that uses it
   selectedProduct$ = combineLatest([
     this.productsWithCategory$,
     this.productSelectedAction$
@@ -507,6 +506,8 @@ product$ = this.productService.selectedProduct$
     );
 ```
 
+Con tale tecnica è possibile anche svolgere operazioni multiple (crud) su un'unica base dati [ma è più complicato](https://github.com/DeborahK/Angular-RxJS/blob/master/APM-WithExtras/src/app/products/product.service.ts). Sarebbe meglio tutte le volte intervenire sull'entità principale che è poi esposta all'esterno con un Observable.
+
 Ed in testa al template si usa:
 ```html
 <div class="card" *ngIf="vm$ | async as vm">
@@ -517,12 +518,15 @@ Ed in testa al template si usa:
 </div>
 ```
 
-
+## Scan
+Un altro operator utile è scan che permette di accumulare informazioni da eventi emessi:
+- [scan](https://www.learnrxjs.io/learn-rxjs/operators/transformation/scan)
 
 
 ## Links:
 - [stackblitz](https://stackblitz.com)
 - [Rxjs](https://rxjs.dev)
+- [learnrxjs.io](https://www.learnrxjs.io)
 - [codice corso su github](https://github.com/DeborahK/Angular-RxJS)
 - [mergeMap & forkJoin requests](https://levelup.gitconnected.com/handle-multiple-api-requests-in-angular-using-mergemap-and-forkjoin-to-avoid-nested-subscriptions-a20fb5040d0c)
 

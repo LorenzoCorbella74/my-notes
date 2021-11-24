@@ -313,16 +313,10 @@ let first_option: number = req.context.get<number>(OPTION_1)
 
 
 ## Cachare dati nell'app
-
-## Links
-
--[corso Angular HTTP Communication](https://app.pluralsight.com/library/courses/angular-http-communication/table-of-contents)
--[codice corso](https://github.com/bricewilson/angular-http-communication)
-
 ```json
 // all'interno del package.json si ha lo script per far partire l'app in watch mode e il mock server su localhost:3000
 {
-    "start": "concurrently --kill-others \"ng build --watch --no-delete-output-path\" \"node server.js\"",
+  "start": "concurrently --kill-others \"ng build --watch --no-delete-output-path\" \"node server.js\"",
     "build": "ng build && node server.js",
 }
 ```
@@ -330,3 +324,6 @@ let first_option: number = req.context.get<number>(OPTION_1)
 ```bash
 & ng generate service core/HttpCache --skip-tests
 ```
+## Links
+- [corso Angular HTTP Communication](https://app.pluralsight.com/library/courses/angular-http-communication/table-of-contents)
+- [codice corso](https://github.com/bricewilson/angular-http-communication)

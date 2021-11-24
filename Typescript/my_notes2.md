@@ -1,7 +1,6 @@
 [Back to index](README.md)
 
 # Notes
-
 In typescript l'idea è quando abbiamo chiaro lo stato di una applicazione dovremmo poi definire il tipo di ogni variabile dello stato e come questo viene manipolato da funzioni e metodi ognuno con i propri tipi di input e di output. Per non moltiplicare i tipi l'idea è quella di estendere i tipi dello stato con tipi dell'ui.
 
 
@@ -55,12 +54,10 @@ validateToken(token ?? 'default-token');
 ```
 
 # Types
-
 - [typescript-object-types](https://medium.com/nerd-for-tech/typescript-object-types-61c956564f87)
 
 
 # type alias
-
 ```typescript
 type Persona = {
     [key:string]: string | number | boolean,    // sintassi per specificare proprietà di cui non si conosce la chiave
