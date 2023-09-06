@@ -119,16 +119,15 @@ const array = ["test", 12] as const;
 Sono gruppi di costanti, simili alle union types.
 
 ```typescript
-
 enum ColorEnum {
-  dark='dark',
-  light='light'
+  dark = "dark",
+  light = "light",
 }
 
-const colors = Record<ColorEnum, string[]> = {
-  [ColorEnum.dark]:['brown','grey'],
-  [ColorEnum.light]:['white','yellow'],
-}
+const colors = (Record<ColorEnum, string[]> = {
+  [ColorEnum.dark]: ["brown", "grey"],
+  [ColorEnum.light]: ["white", "yellow"],
+});
 ```
 
 [typescript-enums](https://medium.com/jspoint/typescript-enums-af03567d662)
@@ -334,6 +333,7 @@ function isHunter(x: unknown): x is Hunter {
 
 const performAction = (x: unknown) => {
   if (isHunter(x)) {
+    // specificando x is Hunter il compilatore associa dopo ad a x il giusto tipo
     x.hunt();
   }
 };
@@ -431,29 +431,28 @@ let logger: (value: string) => void;
 
 # Classes e interfaces (Custom Types)
 
-Sia le Interfacce che le Classi permettono di creare tipi "custom". Le interfacce definiscono delle propietà e dei metodi generici (signatures) mentre le classi permettono di definire proprietà e metodi e loro valorizzazione ed implementazione. Le interfacce definiscono un contratto (le caratteristiche ola forma che deve avere un obj senza la sua implementazione, una astrazione senza dettagli) ma non possono essere istanziate mentre le classi possono essere istanziate.
+Sia le Interfacce che le Classi permettono di creare tipi "custom". Le interfacce definiscono delle propietà e dei metodi generici (signatures) mentre le classi permettono di definire proprietà e metodi e loro valorizzazione ed implementazione. Le interfacce definiscono un contratto (le caratteristiche o la forma che deve avere un obj senza la sua implementazione, una astrazione senza dettagli) ma non possono essere istanziate mentre le classi possono essere istanziate.
 
 ## Interface
 
 ```typescript
 interface Employee {
-    name:string,
-    title:string,
-    age?:number   // opzionale quindi è uno union type  number | undefined
+  name: string;
+  title: string;
+  age?: number; // opzionale quindi è uno union type  number | undefined
 }
 
 interface Manager extends Employee {
-    department:string,
-    numOfEmployees:number,
-    scheduleMeeting: (topic:string)=> void
+  department: string;
+  numOfEmployees: number;
+  scheduleMeeting: (topic: string) => void;
 }
 
 let develop: Employee = {
-    name:"Lore",
-    title:"Developer",
-    editot:"VSC
-}
-
+  name: "Lore",
+  title: "Developer",
+  editot: "VSC",
+};
 ```
 
 Da notare che Le inferfacce sono uno strumento usato dal compilatore ma non esistono nel codice compilato javascript.
@@ -582,7 +581,7 @@ Typescript risolve la posizione del modulo prima vedendo se è un path relativo 
 
 ## [Oggetti dinamici](https://stackoverflow.com/a/44441178)
 
-Per assegnare delle proprietà ad un oggetto vuoto visto che non avrebbe senso assegnare any si usano i così chiamati "index types":
+Per assegnare delle proprietà ad un oggetto vuoto visto che non avrebbe senso assegnare any si usano i così chiamati **Index Signatures** che vincolano però ad avere lo stesso tipo di valore:
 
 ```typescript
 var obj = {};

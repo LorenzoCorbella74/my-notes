@@ -405,6 +405,69 @@ const volvoS60Transmission: CarTransmissions = "manual";
 const volvoXC90Transmission: CarTransmissions = "automatic";
 ```
 
+## Indexed Access Types
+
+Per accedere delle parti di un tipo si possono usare gli index access type che tramite le [ ] permettono di selezionare delle parti di un tipo:
+
+```typescript
+type Dog = {
+  name: string;
+  lastName: string;
+  age: number;
+};
+
+type DogAge = Dog["age"]; // type number
+// oppure con union type
+type DogNameOrAge = Dog["age" | "name"]; // type number | string
+```
+
+E' possibile usare gli index access type per creare uno Union type da un **const** object
+(si parte da un oggetto e si recuperano i tipi delle chiavi e dei valori):
+
+```typescript
+const Prizes = {
+  FIRST: 1000,
+  SECOND: 500,
+  THIRD: 100,
+} as const;
+
+type PrizesType = typeof Prizes;
+type PrizesTypeKeys = keyof PrizesType; // "FIRST" | "SECOND" | "THIRD"
+type Prize = PrizesType[PrizesTypeKeys]; // 1000 | 500 | 100
+
+function payUp(prize: Prize) {}
+```
+
+E' possibile accedere alle proprietà innestate di un oggetto:
+
+```typescript
+type Dog = {
+  name: string;
+  lastName: string;
+  age: number;
+  owner: {
+    name: string;
+    age: number;
+  };
+};
+
+type AgeOrName = "name" | "age";
+
+type OwnerNameOrAge = Dog["owner"][AgeOrName]; // type number | string
+```
+
+o accedere agli oggetti dentro un array:
+
+```typescript
+const players = [
+  { id: "asda", score: 100 },
+  { id: "akjkjk", score: 180 },
+  { id: "jgfj", score: 130 },
+];
+
+type Player = (typeof players)[number]; // {id:string;score:number}
+```
+
 # Casi particolari
 
 - [10-typescript-features-you-might-not-be-using](https://obaranovskyi.medium.com/10-typescript-features-you-might-not-be-using-yet-or-didnt-understand-d1f28888ea45)

@@ -134,3 +134,6 @@ The difference between the Vue Composition API and React Hooks is that React Hoo
 
 - [compare-react-hooks-with-vue-composition-api](https://developpaper.com/compare-react-hooks-with-vue-composition-api/)
 - [vue-composition-api-vs-react-hooks](https://blog.logrocket.com/vue-composition-api-vs-react-hooks/)
+
+Da guardare:
+https://github.com/alextim/vite-plugin-simple-json-server/tree/main

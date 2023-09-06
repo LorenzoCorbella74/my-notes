@@ -1,6 +1,6 @@
 # Corso "React 18 Fundamentals"
 
-React è una libreria javascript per costruire User Interfaces basata su componenti. L'idea è costruire SPA tramite una gerarchia di componenti riutilizzabili, aventi uno state interno e l'UI dichiarata tramite javascript che viene rirenderizzata quando lo state cambia: tale operazione di ri rendering, chiamata reconciliation, è selettiva (si aggiornano le parti dell'UI che devono cambiare).
+React è una libreria javascript per costruire User Interfaces basata su componenti. L'idea è costruire SPA tramite una gerarchia di componenti riutilizzabili, aventi uno state interno e l'UI dichiarata tramite javascript che viene rirenderizzata quando lo state cambia: tale operazione di ri rendering, chiamata RECONCILIATION, è selettiva (si aggiornano le parti dell'UI che devono cambiare).
 
 ## Anatomia di una app
 
