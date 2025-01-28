@@ -11,7 +11,7 @@ Questi modelli eccellono in:
 
 Per fare dei test utilizzare la [chat](https://claude.ai/new) mentre per generare una [API Key](https://console.anthropic.com/settings/keys)
 
-Ho registrato una chiave chiamata `testAPI` = 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
+Ho registrato una chiave chiamata `testAPI` = xxx
 
 tale chiave deve essere salvata in un file .env con la variabile d'ambiente `ANTHROPIC_API_KEY=testAPI`, a cui si può accedere in Node.js con process.env.ANTHROPIC_API_KEY .
 
