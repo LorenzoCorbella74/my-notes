@@ -11,9 +11,7 @@ Questi modelli eccellono in:
 
 Per fare dei test utilizzare la [chat](https://claude.ai/new) mentre per generare una [API Key](https://console.anthropic.com/settings/keys)
 
-Ho registrato una chiave chiamata `testAPI` = qualcosa 
-
-tale chiave deve essere salvata in un file .env con la variabile d'ambiente `ANTHROPIC_API_KEY=testAPI`, a cui si può accedere in Node.js con process.env.ANTHROPIC_API_KEY .
+Ho registrato una chiave chiamata `testAPI` tale chiave deve essere salvata in un file .env con la variabile d'ambiente `ANTHROPIC_API_KEY=testAPI`, a cui si può accedere in Node.js con process.env.ANTHROPIC_API_KEY .
 
 Per fare una chiamata a Claude 3.5 Sonnet (200K context window) si può usare il seguente codice importando la dipendenza @anthropic-ai/sdk@0.24.3 d usando la [message API](https://docs.anthropic.com/en/api/messages):
 ```javascript
