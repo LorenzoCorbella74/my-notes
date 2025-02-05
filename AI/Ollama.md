@@ -1,7 +1,10 @@
 #AI, #software 
 
 # Ollama
-[Ollama](https://ollama.com) è un software per WIN, MAC, Linux che permette di eseguire **in locale** i modelli LLM quali Llama3.2(prodotto da Meta in versione 1B e 3B (3 milioni di parametri), modelli esclusivamente testuali e large language model multilingue), Mistral, etc per avere un assistente personale e chattare con esso.  [La documentazione ufficiale](https://github.com/ollama/ollama/tree/main/docs). Notare che ogni modello ha un peso (llama2 circa 3,8GB) pertanto si deve avere un quantitativo di memoria sufficiente per far girare il modello scelto(Attenzione che Ollama utilizza la memoria della GPU e e non la RAM!!!!). Il modello che funziona meglio con la lingua italiana è [Mistral](https://ollama.com/library/mistral) e [Zephyr](https://ollama.com/library/zephyr). 
+[Ollama](https://ollama.com) è un software per WIN, MAC, Linux che permette di eseguire **in locale** i modelli LLM quali Llama3.2(prodotto da Meta in versione 1B e 3B (3 milioni di parametri), modelli esclusivamente testuali e large language model multilingue), Mistral, etc per avere un assistente personale e chattare con esso.  . Notare che ogni modello ha un peso (llama2 circa 3,8GB) pertanto si deve avere un quantitativo di memoria sufficiente per far girare il modello scelto(Attenzione che Ollama utilizza la memoria della GPU e e non la RAM!!!!). Il modello che funziona meglio con la lingua italiana è [Mistral](https://ollama.com/library/mistral) e [Zephyr](https://ollama.com/library/zephyr). 
+
+[Documentazione ufficiale](https://github.com/ollama/ollama/tree/main/docs)
+
 ### Installazione
 
 Scaricare il software dal [sito](www.ollama.com) e guardare la [guida video in ITA](https://www.youtube.com/watch?v=y7ZnVxj-6P4&ab_channel=AvvocatieMac) e relativo [articolo](https://www.avvocati-e-mac.it/blog/2024/3/15/installazione-ed-utilizzo-di-ollama-su-mac-guida-per-principianti-per-chattare-con-il-tuo-llm-personale). L'installer chiederà di installare il software per la CLI.
@@ -25,8 +28,6 @@ Il default di solito è impostato a 2048 tokens di input che il modello consider
 
 > ollama create -f Modelfile qwen2.5-coder:custom
 > ollama show qwen2.5-coder:7b # è possibile vedere il context length modificato...
-
-
 ```
 E' comunque sempre importante vedere quanto il context è impostato nel modello corrente:
 ```
@@ -80,9 +81,9 @@ You are an english teacher...
 ```
 E' possibile creare un modello da un weight file che può essere scaricato da hugginface come GGUF file convertito e quantizzato da qualcun'altro
 ## Integrazioni con altri software
-Esistono dei software open source desktop come [Rivet](https://rivet.ironcladapp.com/)che permettono visualmente di combinare, tramite un Node based editor, senza codice, dei flussi permettendo di creare degli **AI Agents** complessi. L'utilizzo permette ad esempio, tramite il plugin di ollama di estrarre testo da un .pdf convertirlo in .md, e generare un riassunto tramite il modello llama2. Guardare [l'articolo](https://www.avvocati-e-mac.it/blog/2024/3/20/rivet-una-soluzione-facile-e-veloce-per-creare-agenti-ai-con-llm-in-locale) ed [il filmato](https://www.youtube.com/watch?v=y6fbGp32iBw&ab_channel=AvvocatieMac). Tale software di fatto dialoga con l'API di ollama (è come un server che risponde al path http://192.168.1.126:11434) per utilizzare le funzionalità di quest'ultimo. Vedere [la guida](https://www.avvocati-e-mac.it/blog/2024/4/15/configurazione-rivet-per-utilizzarlo-con-ollama) per configurare  Rivet con ollama.
+Esistono dei software open source desktop come [Rivet](https://rivet.ironcladapp.com/) che permettono visualmente di combinare, tramite un Node based editor, senza codice, dei flussi permettendo di creare degli **AI Agents** complessi. L'utilizzo permette ad esempio, tramite il plugin di ollama di estrarre testo da un .pdf convertirlo in .md, e generare un riassunto tramite il modello llama2. Guardare [l'articolo](https://www.avvocati-e-mac.it/blog/2024/3/20/rivet-una-soluzione-facile-e-veloce-per-creare-agenti-ai-con-llm-in-locale) ed [il filmato](https://www.youtube.com/watch?v=y6fbGp32iBw&ab_channel=AvvocatieMac). Tale software di fatto dialoga con l'API di ollama (è come un server che risponde al path http://192.168.1.126:11434) per utilizzare le funzionalità di quest'ultimo. Vedere [la guida](https://www.avvocati-e-mac.it/blog/2024/4/15/configurazione-rivet-per-utilizzarlo-con-ollama) per configurare  Rivet con ollama.
 
-E' presente per raycast un [plugin](https://www.raycast.com/massimiliano_pasquini/raycast-ollama) che permette di eseguire Ollama e mostrare l'output in UI. Vedere i due articoli  l'[articolo](https://krgr.dev/blog/local-genai-with-raycast-ollama-and-pytorch/)che combina questi tool per avere una AI generativa locale:
+E' presente per raycast un [plugin](https://www.raycast.com/massimiliano_pasquini/raycast-ollama) che permette di eseguire Ollama e mostrare l'output in UI. Vedere i due articoli  l'[articolo](https://krgr.dev/blog/local-genai-with-raycast-ollama-and-pytorch/) che combina questi tool per avere una AI generativa locale:
 - [writing assistance](https://calvincchan.com/blog/240217_free_offline_ai_writing_assistance_for_mac_with_local_llm)
 - [raycast ollama & pytoarch](https://krgr.dev/blog/local-genai-with-raycast-ollama-and-pytorch/)
 
