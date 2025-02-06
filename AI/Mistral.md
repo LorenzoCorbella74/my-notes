@@ -21,9 +21,6 @@
 
 E' possibile accedere ai modelli tramite API endpoints (La plateforme) o Public Cloud o On-premise. I modelli vanno in termini di percentuale MMLU (Massive multitask language understanding) dal 62,5% di Mistral7b al 81,2% di Mistra-Large.
 
-**NB:** Hugging face è una piattaforma ricca di modelli open source e dataset è [Hugging Face](https://huggingface.co/) su cui è possibile recuperare vari modelli di [mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1)
-
-
 # Utlizzo
 Per poter utilizzare l'API bisogna recuperare una [API keys](https://console.mistral.ai/api-keys/)
 
@@ -299,6 +296,8 @@ async function generateChatResponse(context, query) {
 ## AI Agents with Function Calling
 Il function calling in un LLM (Large Language Model) è la capacità del modello di riconoscere quando una richiesta dell'utente corrisponde a una funzione specifica e di generare automaticamente l'input corretto per chiamarla. Questo permette all'LLM di interagire con API, database o strumenti esterni in modo strutturato.
 
+![function calling](./mistral_img3.png)
+
 📌 Come funziona il function calling?
 L'utente fa una richiesta → L'LLM riconosce che la richiesta può essere soddisfatta chiamando una funzione.
 L'LLM genera l'input corretto → Costruisce un oggetto JSON o un'altra struttura compatibile con la funzione.
@@ -458,6 +457,195 @@ Se l'utente dice:
 👉 Il modello potrebbe rispondere:
 "Di quale città vuoi conoscere il meteo?"
 (perché non ha abbastanza informazioni per chiamare la funzione get_weather).
+
+```js
+// index.js
+import MistralClient from '@mistralai/mistralai';
+import { tools } from "./tools.js";
+const client = new MistralClient(process.env.MISTRAL_API_KEY);
+
+async function agent(query) {
+  const messages = [
+    { role: "user", content: query }
+  ];
+    
+  const response = await client.chat( {
+      model: 'mistral-large-latest',
+      messages: messages,
+      tools: tools // -> si passa la lista delle funzioni disponibili
+  });
+  
+  return response;
+}
+
+const response = await agent("Is the transaction T1001 paid?");
+```
+Le funzioni sono stoccate in tools.js:
+```js
+// tools.js
+const data = [
+    { transaction_id: 'T1001', customer_id: 'C001', payment_amount: 125.50, payment_date: '2021-10-05', payment_status: 'Paid' },
+    { transaction_id: 'T1002', customer_id: 'C002', payment_amount: 89.99, payment_date: '2021-10-06', payment_status: 'Unpaid' },
+    { transaction_id: 'T1003', customer_id: 'C003', payment_amount: 120.00, payment_date: '2021-10-07', payment_status: 'Paid' },
+    { transaction_id: 'T1004', customer_id: 'C002', payment_amount: 54.30, payment_date: '2021-10-05', payment_status: 'Paid' },
+    { transaction_id: 'T1005', customer_id: 'C001', payment_amount: 210.20, payment_date: '2021-10-08', payment_status: 'Pending' }
+];
+
+export function getPaymentStatus({transactionId}) {
+  const transaction = data.find(row => row.transaction_id === transactionId);
+  if (transaction) {
+    return JSON.stringify({ status: transaction.payment_status });
+  } 
+  return JSON.stringify({ error: 'transaction id not found.' });
+}
+
+export function getPaymentDate({transactionId}) {
+    const transaction = data.find(row => row.transaction_id === transactionId);
+    if (transaction) {
+        return JSON.stringify({ date: transaction.payment_date });
+    }
+    return JSON.stringify({ error: 'transaction id not found.' });
+}
+
+
+export const tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "getPaymentStatus",
+            "description": "Get payment status of a transaction",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "The transaction id.",
+                    }
+                },
+                "required": ["transactionId"],
+            },
+        },
+    },{
+        "type": "function",
+        "function": {
+            "name": "getPaymentDate",
+            "description": "Get the payment date of a transaction",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "transactionId": {
+                        "type": "string",
+                        "description": "The transaction id.",
+                    }
+                },
+                "required": ["transactionId"],
+            },
+        },
+    }
+]
+```
+Nell'output della response si specifica che deve essere chiamata la funzione getPaymentStatus:
+```js
+let output = {
+    id: "d1d057bcc4514646b19b86660f61ac2f", 
+    object: "chat.completion", 
+    created: 1711036261, 
+    model: "mistral-large-latest", 
+    choices: [{
+        index: 0, 
+        message: {
+            role: "assistant",  
+            content: "", 
+            tool_calls: [{
+                function: {
+                    name: "getPaymentStatus", 
+                    arguments: '{"transactionId": "T1001"}'
+                }
+            }]
+        }, 
+        finish_reason: "tool_calls", // -> indica che è da chiamare una funzione
+        logprobs: null
+    }],
+    usage: {
+        prompt_tokens: 84, 
+        total_tokens: 110, 
+        completion_tokens: 26
+    }
+};
+```
+Ricordando che si deve sempre tenere aggiornato la list di msg tra l'utente e l'assistente (e quindi inserire anche la risposta che si deve chiamare una funzione):
+```js
+import MistralClient from '@mistralai/mistralai';
+import { tools, getPaymentDate, getPaymentStatus } from "./tools.js";
+const client = new MistralClient(process.env.MISTRAL_API_KEY);
+
+const availableFunctions = {
+    getPaymentDate,
+    getPaymentStatus
+};
+
+async function agent(query) {
+    const messages = [
+        { role: "user", content: query }
+    ];
+
+    for (let i = 0; i < 5; i++) {  // -> si fa un loop per evitare che il modello vada in loop
+        const response = await client.chat( {
+            model: 'mistral-large-latest',
+            messages: messages,
+            tools: tools
+        });
+        
+        messages.push(response.choices[0].message);
+
+        // if the finishReason is 'stop', then simply return the 
+        // response from the assistant
+        if (response.choices[0].finish_reason === 'stop') {
+            return response.choices[0].message.content;
+        } else if (response.choices[0].finish_reason === 'tool_calls') {
+            const functionObject = response.choices[0].message.tool_calls[0].function;
+            const functionName = functionObject.name;
+            const functionArgs = JSON.parse(functionObject.arguments);
+            const functionResponse = availableFunctions[functionName](functionArgs);
+            messages.push({
+                role: 'tool',
+                name: functionName,
+                content: functionResponse 
+            });
+        }
+    }
+}
+
+const response = await agent("when was the transaction T1001 paid?");
+console.log(response);
+```
+
+#  Usare Mistral localmente
+Installare ollama e scaricarlo ed utilizzare una rest API con, ad esempio, express per eseguire il modello:
+```js
+import ollama from "ollama";
+import express from "express";
+
+const app = express();
+const port = 3000;
+
+app.get('/', async (req, res) => {
+    const question = req.query.question;
+    if (!question) {
+        res.status(200).send("Ask something via the `?question=` parameter");  
+    } else {
+        const response = await ollama.chat({
+            model: 'mistral',
+            messages: [{ role: 'user', content: question }],
+        });
+        res.status(200).send(response.message.content);
+    }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+```
 
 # Links:
 - [Scrimba course](https://scrimba.com/intro-to-mistral-ai-c035)
