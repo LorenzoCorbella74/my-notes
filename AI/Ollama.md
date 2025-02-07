@@ -132,7 +132,6 @@ Esistono due librerie per interagire con la REST API di ollama una [Javascript](
 - [Building rag with typescript + chromaDB](https://github.com/technovangelist/videoprojects/tree/main/2024-04-08-build-rag-with-typescript)
 - [function calling with tools](https://github.com/technovangelist/videoprojects/tree/main/2024-07-10-functioncalling-with-tools) + [video](https://www.youtube.com/watch?v=hb5iwDpsPwc)
 - [Freecode Camp - Ollama Course – Build AI Apps Locally](https://www.youtube.com/watch?v=GWB9ApTPTv4&t=6706s) - (python)
-- [Getting Started with LangChain | JavaScript Tutorial #1](https://www.youtube.com/watch?v=W3AoeMrg27o&list=PL4HikwTaYE0Fg34w_Eh37bghD3moPRd0f&index=1&t=8s) and [code](https://github.com/leonvanzyl/langchain-basics/blob/master/demo.js)
 - [Corso Ollama e LangChain in Typescript](https://www.youtube.com/playlist?list=PLoZNHBEyxFQGylexl7fB3dJuM0XB4ldUB) + [codice](https://github.com/johnnypax/langchain-javascript-ollama-yt)
 
 - [Chat FE in vanilla JS](https://medium.com/@santoshmouriya1234567890/ollama-js-make-your-own-chatbot-with-ollama-js-nodejs-and-html-css-and-javascript-d9fc225bf92f)
