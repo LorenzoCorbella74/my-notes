@@ -90,6 +90,8 @@ Relativamente ai task, è possibile definire un file `deno.json` con i comandi d
 ```
 Notare che gli imports sono degli `alias` che puntano a specifici moduli.
 
+![node_us_deno](./deno_us_node.png)
+
 ## 2. Uso di moduli Node e NPM
 Con la versione 2 è possibile usare sia i moduli node che quelli di NPM con gli opportuni specifiers `node:` e `npm:`.
 ```typescript
@@ -150,7 +152,12 @@ import {parse} from "https://deno.land/std@1.2.1/flags/mod.ts"; // per importare
 await copy("foo.txt", join("dist", "foo.txt"));
 ``` 
 ## 5. Browser Wep APIS compatibile
-Deno utilizza le wep api come fetch, localstorage, etc.  
+Deno utilizza le wep api come:
+- `fetch` per fare richieste HTTP
+- Prompt per interagire con l'utente
+- Request e Response Object
+- Url
+- ReadableStream e WritableStream  
 ```typescript
 const response = await fetch("https://api.github.com/users/denoland");
 const json = await response.json();
