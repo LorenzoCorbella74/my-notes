@@ -1,6 +1,6 @@
 # Langchain
 E' un framework che permette di costruire delle applicazioni potenziate dall'intelligenza artificiale in python e javascript.
-Permette di connettere l'applicazione con fonti di dati esterne, come ad esempio API, database, file system (text files), ecc. La sua architettura è basata su catene di trasformazioni che permettono di creare modelli più flessibili e adattabili basatai su la LangChain Expression Language (LCEL) che permette di comporre catene di trasformazioni in modo dichiarativo.
+Permette di connettere l'applicazione con fonti di dati esterne, come ad esempio API, database, file system (text files), ecc. La sua architettura è basata su catene di trasformazioni che permettono di creare modelli più flessibili e adattabili basati su la LangChain Expression Language (LCEL) che permette di comporre catene di trasformazioni in modo dichiarativo.
 
 # Link
 - [Corso youtube - LangChain Javascript Tutorial For Beginners](https://www.youtube.com/watch?v=asQsH1lpy8U) con [codice su github](https://github.com/leonvanzyl/langchain-js) 09/2024

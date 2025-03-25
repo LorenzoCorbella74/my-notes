@@ -1,5 +1,6 @@
 # [Deno 2](https://deno.com/)
 
+
 E' un runtime JavaScript open-source moderno, rilasciato nella sua 1° versione del 2020 e nella sua 2° versione nel 2024. Anch'esso basato sul Google V8 Javascript Engine (lo stesso di Node.js e Chrome). A differenza di Node, scitto in c++ , Deno è scritto in Rust. 
 
 Le sue carateristiche principali sono:

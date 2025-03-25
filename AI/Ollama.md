@@ -136,3 +136,4 @@ Esistono due librerie per interagire con la REST API di ollama una [Javascript](
 
 - [Chat FE in vanilla JS](https://medium.com/@santoshmouriya1234567890/ollama-js-make-your-own-chatbot-with-ollama-js-nodejs-and-html-css-and-javascript-d9fc225bf92f)
 
+- [How to Create Your Own Dataset from Scratch with Ollama Locally](https://www.youtube.com/watch?v=Lie8uMoAVec)
