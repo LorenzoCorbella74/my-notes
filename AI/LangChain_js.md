@@ -678,3 +678,7 @@ console.log(resp2);
 await memory.saveContext(inputs2, {
   output: resp2.content,
 });
+```
+
+## Links
+- [Articolo: Get Started Easily with LangchainJS and Ollama](https://k33g.hashnode.dev/get-started-easily-with-langchainjs-and-ollama)
