@@ -10,7 +10,7 @@ E' un Ai coding assistant che permette di scrivere codice velocemente e con meno
 
 
 ## 1. Code completion
-Inserendo un commento o semplicemente attendendo si possono ricevere suggerimenti (code completion as ghost text) che possono essere accettati premendo `TAB`.
+Inserendo un commento o semplicemente attendendo si possono ricevere suggerimenti (code completion as ghost text) che possono essere accettati premendo `TAB`. Nota bene anche il code completion può essere pensata come una query del tipo: `you are a code completion agent. The current file you have to complete is {file}, the language of the file is {language}. Return the result as a plain text without the "". Finish the following code snippets  {{prefix}}[MARKER]{suffix}} . Only return the exact replacement for the marker. Do not return multiple suggestions`.
 
 ## 2. Inline Chat
 Premendo `cmd + I` si può avere una chat inline che permette di avere un'interazione più veloce con Copilot e limitata alla porzione di codice ed al file che sto editando (`ESC` per chiudere tale chat inline) _ed è consigliata rispetto ad inserire un commento ed aspettare l'autocompletamento_. Inoltre usare inoltre la feeback e rating feature (i btn per dare un voto ai suggerimenti) per migliorare la qualità dei suggerimenti nel tempo.
@@ -76,5 +76,3 @@ Per scrivere i prompt abbiamo le seguenti 4 strategie:
 Source: [Essential AI prompts for developers](https://www.youtube.com/watch?v=H3M95i4iS5c)
 
 
-git config user.name "Lorenzo Corbella"
-git config user.email "ing.lorenzo.corbella@gmail.com"
