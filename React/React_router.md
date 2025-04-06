@@ -7,8 +7,12 @@ Si installa con:
 # oppure aggiornando da un progetto con V5
 > npm i -D react-router-dom@latest
 ```
+Si deve poi configurare il BrowserRouter (eventuamente indicando anche un alias per il componente):
 
-Si deve usare il tag padre `Routes` e i tag figli `Route` dove in questi si specifica il path ed il componente da usare.
+```javascript
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+```
+Poi si devono includere il tag padre `Routes` e i tag figli `Route` dove in questi si specifica il path ed il componente da usare.
 E' possibile avere rotte innestate (come quella di Layout che contiene altre rotte).
 
 Con `index` si specifica il componente di default tra n figli, mentre con `*` vale per tutte quelle rotte che non matchano le precedenti (no match rule).
@@ -97,7 +101,7 @@ nav a.active {
 
 oppure si può 2) applicare una funzione in jsx:
 
-```js
+```jsx
 export const Navbar = () => {
 
   const style={navLinkStyles} = ({isActive})=> {
@@ -162,13 +166,10 @@ const User = () => {
 
 ## Parametri di search
 
-Per i query string (chiamati in React Router "search params") tipo /users?name=robin si usa l'hook:
+Per i query string (chiamati in React Router "search params") tipo /users?name=robin si usa l'hook useSearchParams:
 
 ```javascript
-import {
-  ...
-  useSearchParams,
-} from 'react-router-dom';
+import {useSearchParams} from 'react-router-dom';
 
 const Users = ({ users }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -176,7 +177,6 @@ const Users = ({ users }) => {
 
   const handleSearch = (event) => {
     const name = event.target.value;
-
     if (name) {
       setSearchParams({ name: event.target.value });
     } else {
@@ -192,7 +192,6 @@ const Users = ({ users }) => {
         value={searchTerm}
         onChange={handleSearch}
       />
-
       <ul>
         {users
           .filter((user) =>
@@ -206,7 +205,6 @@ const Users = ({ users }) => {
             </li>
           ))}
       </ul>
-
       <Outlet />
     </>
   );

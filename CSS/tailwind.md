@@ -2,7 +2,7 @@
 
 # Tailwindcss
 
-[Codice corso](https://github.com/iamshaunjp/tailwind-tutorial)
+[Codice corso](https://github.com/iamshaunjp/tailwind-tutorial) (5 anni fa)
 
 E' un framework CSS costituito da classi di ultilità "low level"(che fanno solo una cosa...) che messe insieme permettono di produrre componenti responsivi, e altamente customizzabili e di strutturare un design flessibile senza codice css custom:
 
@@ -323,3 +323,4 @@ E' consigliato installare l'estenzione [Tailwind VSC intellisence](https://marke
 - [cheatsheet 1](https://tailwindcomponents.com/cheatsheet/)
 - [cheatsheet 2](https://nerdcave.com/tailwind-cheat-sheet)
 - [Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app)
+- [Cheatsheet V3 / V4 ](https://kombai.com/tailwind/cheat-sheet/)
