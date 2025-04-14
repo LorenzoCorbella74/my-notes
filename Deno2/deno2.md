@@ -70,6 +70,11 @@ Con tale action è possibile fare il debug del codice Deno sia da un terminale i
 
 Una volta intallato si ha un unico binary che gestisce tutto.
 
+A volte può rimanere appesa una sessione di debug su una specifica porta per killarla si usa:
+```bash
+lsof -i :9229 # per ricavare il PID della porta su istanza Deno
+kill -9 <PID> # per killarla
+```
 
 
 ## Comandi
