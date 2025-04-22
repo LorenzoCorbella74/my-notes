@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # BEM
 Se non si segue una convenzione il codice CSS  può diventare velocemente un caos. BEM è una metodologia (o style guide o naming convenction) self explanatory e semplice che permette di identificare i `Blocchi` come un gruppo indipendente di `Elementi` UI e gli eventuali `modificatori` (che identificano delle variazioni alla versione standard) di tali elementi o blocchi dando ordine, struttura e una maggiore manutenibilità al codice CSS. 
 

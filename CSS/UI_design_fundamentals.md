@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # UI Design Fundamentals
 
 ## White Space

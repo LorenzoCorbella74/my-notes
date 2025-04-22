@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Creating Object-oriented TypeScript Code
 
 Appunti del corso [Creating Object-oriented TypeScript Code](https://app.pluralsight.com/library/courses/typescript-creating-object-oriented-code/table-of-contents). 

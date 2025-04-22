@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Angular router
 
 The Angular Router provides two different methods to get route parameters:

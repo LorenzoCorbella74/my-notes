@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Angular HTTP
 
 Il modulo ___HttpClient___ permette di fare chiamate http,  va importato all'interno di `app.module.ts`:

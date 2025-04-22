@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 ## Pub Sub
 
 

@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Angular forms
 
 In angular 2.x ci stanno due tipi di form:

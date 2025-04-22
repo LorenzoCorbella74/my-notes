@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # CSS variables
 
 Sotto un esempio di uso di variabili CSS sia per i colori che per la responsività della pagina

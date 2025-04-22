@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # RXJS in Angular: Reactive development
 Rxjs è una libreria che permette di lavorare su `stream di dati` processandoli tramite numerosi operatori. E' parte integrante di Angular che utilizza gli Observable nei form, nel routing e nell'httpService.
 

@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # ngTemplateOutlet
 
 Per creare componenti riutilizzabili è molto utile il `ngTemplateOutlet` e `ngTemplateOutletContext` che permette di fornire dei template riutilizzabili ai componenti. Vediamo come estendere un componente del tipo

@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Angular Style
 
 Come funzionano i fogli di stile in Angular?. Come si produce codice css scalabile e manutenibile usando SASS? Come si sviluppano i theme per i componenti? 

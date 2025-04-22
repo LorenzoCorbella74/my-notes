@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Tailwindcss
 
 [Codice corso](https://github.com/iamshaunjp/tailwind-tutorial) (5 anni fa)

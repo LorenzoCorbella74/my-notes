@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Angular NgRx
 
 NgRx è una libreria che implementa il pattern di Redux. Per strutturare l'interazione e la comunicazione dei componenti, gestire lo state dell'applicazione ed unificare gli eventi dell'app, è nolto utilizzato il pattern di Redux basato sul "one way data flow", "store as single source of thruth" e "immutable store"(ossia lo state è readonly ed è cambiato solo da dispatched actions tramite funzioni "pure" chiamate reducers) e nell'ecosistema Angular la libreria + usata è NgRx che obbliga ad obbedire a tale pattern "consistente" durante la crescita di un'app.

@@ -1,5 +1,3 @@
-#software 
-
 [AutoHotKey](https://www.autohotkey.com/) è uno scripting language per l'automazione di Windows. All'interno della cartella `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` ci sta la AutoHotKey Dash che è un software che gestisce gli script contenuti in una cartella preimpostata. L'utente **tramite una combinazione di tasti** trigghera degli script che eseguono delle successioni di comandi.
 
 ### Commenti

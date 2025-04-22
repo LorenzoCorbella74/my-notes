@@ -1,5 +1,3 @@
-[Back to index](README.md)
-
 # Creating and Using Generics in TypeScript
 
 Appunti del corso [Creating and Using Generics in TypeScript](https://app.pluralsight.com/library/courses/typescript-generics-creating-using/table-of-contents).
