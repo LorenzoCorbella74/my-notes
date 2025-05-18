@@ -162,6 +162,11 @@ Per inserire i dati in una tabella si usa il metodo `insert`:
   }
 ```
 
+## Suggerimenti Extra
+- Se usi TypeScript, Supabase può generare i tipi a partire dallo schema → supabase gen types.
+- Puoi anche creare view SQL in Supabase per semplificare le join complesse.
+- Abilita Row Level Security (RLS) per proteggere i dati, e poi crea policy ad hoc per leggere/scrivere.
+
 # Links
 - [Supabase](https://supabase.com/)
 - [Corso scrimbla](https://scrimba.com/intro-to-supabase-c0abltfqed)
