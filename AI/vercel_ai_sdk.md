@@ -421,6 +421,7 @@ const askAQuestion = async (prompt: string) => {
 
 await askAQuestion(`What's the weather in London?`);
 ```
+La proprietà maxSteps, se maggiore di 1, permette di di eseguire più passi (sia con generateText che streamText). Il modello genera una tool call e poi esegue una nuova generazione passando il risultatao della tool call finchè non ci stanno altre tool call o si [raggiunto il massimo numero di tool steps indicato](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-maxsteps). In questo modo si possono eseguire più tool call in un'unica generazione.
 Altro esempio di utilizzo:
 ```ts
 import { generateText, tool } from "ai";
@@ -506,7 +507,7 @@ for await (const delta of result.textStream) {
 }
 ```
 
-## UI
+## [UI](https://ai-sdk.dev/docs/ai-sdk-ui)
 E' possibile utilizzare la UI di Vercel AI SDK per costruire applicazioni AI in modo semplice e veloce con react:
 ```tsx
 'use client';
