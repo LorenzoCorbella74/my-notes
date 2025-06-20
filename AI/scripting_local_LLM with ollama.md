@@ -55,7 +55,7 @@ const commandsFilePaths = await globby("commands/*.md",{
 // map the command name to the file path
 const commandMap = new Map<string,string>()
 for (const commandFilePath of commandFilePaths){
-    const commandName= path.parse(commandFilePath).name; // name sdel file senza estensione
+    const commandName= path.parse(commandFilePath).name; // name del file senza estensione
     const commandContent = await readFile(commandFilePath,"utf-8");
     commandMap.set(commandName, commandContent)
 }
