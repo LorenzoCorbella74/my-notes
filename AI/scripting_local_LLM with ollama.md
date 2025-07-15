@@ -4,7 +4,7 @@ Installare le dipendenze:
 ```bash
 pnpm i ollama-provider ai zod
 ```
-Mettere all'interno di un file `commands/summarize.md` il testo markdown:
+Mettere all'interno di un file `commands/summarize.md` il testo markdown (che di fatto costituirà le istruzioni per svolgere una certa azione):
 ```markdown
 Please summarize the following content to a single sentence.
 ```
@@ -28,7 +28,10 @@ import {parseArgs} from "node:util"
 import {readFile} from "node:fs/promises"
 import path from "node:path"
 
-// all'inizio si caricano tutti i file
+/* 
+    all'inizio si caricano tutti i file per valorizzare l'enum 
+    di tutti e soli file su cui si può agire con i diversi comandi/azioni
+*/
 const files = await globby("**/*.md",{
     gitignore:true
 });
@@ -72,6 +75,12 @@ const {object} = await generateObject({
 });
 
 const content = await readFile(object.filepath, "utf-8");
+
+/* 
+    si deve gestire i comandi NON trovati 
+    e il sequenzial thinking (cioè prima nella fase di reasoning
+    si deve definire i passi e poi si devono eseguire in ordine)    
+*/
 
 const textPrompt = `
 <command>

@@ -476,3 +476,4 @@ const lib = Deno.dlopen("./lib.so", {
     result: "i32",
   },
 });
+```
