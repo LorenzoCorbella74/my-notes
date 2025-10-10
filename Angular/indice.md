@@ -3,8 +3,8 @@
 # Indice: Angular
 
 - [Accessibility_angular](Accessibility_angular.md)
-- [Angular library](Angular library.md)
-- [Angular router](Angular router.md)
+- [Angular library](Angular_library.md)
+- [Angular router](Angular_router.md)
 - [Angular&RXJS](Angular&RXJS.md)
 - [angular-architecture](angular-architecture.md)
 - [angular-cli](angular-cli.md)
