@@ -1,3 +1,5 @@
+[Torna all'indice principale](../README.md)
+
 # Indice: Typescript
 
 - [Typescript_best_practice](Typescript_best_practice.md)

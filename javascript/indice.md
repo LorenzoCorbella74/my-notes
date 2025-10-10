@@ -1,3 +1,5 @@
+[Torna all'indice principale](../README.md)
+
 # Indice: javascript
 
 - [# How to Write an Open Source JavaScript](# How to Write an Open Source JavaScript.md)

@@ -1,3 +1,5 @@
+[Torna all'indice principale](../README.md)
+
 # Indice: Angular
 
 - [Accessibility_angular](Accessibility_angular.md)
