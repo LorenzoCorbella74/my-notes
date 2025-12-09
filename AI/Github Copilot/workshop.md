@@ -1,3 +1,52 @@
+
+
+
+
+# Custom Chat Modes
+Cliccando sulla combox dei modi è possibile oltre che scegliere i vari chat mode (Ask, Edit, Agent) anche crearne di nuovi selezionando "Configure Modes". L?idea è avere dei custom chat modes che definiscono specific comportamenti in base a Tool e quindi ad MCP diversi a seconda delle esigenze: 
+0. Create a new chat mode
+1. Select the tools you want to enable for this chat mode
+2. Select the MCP (Multi-Channel Prompt) you want to use for this chat mode
+3. Save the new chat mode with a name and description
+
+
+
+# Interazione Utente - LLM
+In termini generali un utente interagisce con un LLM (Large Language Model) attraverso dei prompt (istruzioni testuali) e la conversazione avviene passando tutti i messaggi di testo (prompt e risposte) tra utente e LLM questo per mantenere memoria del contesto della conversazione. per le istruzioni generali si ha il system prompt (istruzioni di base per il modello) e poi si hanno i messaggi di utente e le risposte del modello. 
+
+
+# Cosa è un agente
+Un agente è un sistema che una volta ricevuto un task, in base ad un contesto, su questo prende delle decisioni ed esegue azioni per raggiungere un obiettivo specifico. Le azioni, leggere file editare o creare file, fare ricerche sul web, etc, sono eseguite attraverso dei tool (strumenti) che l'agente può utilizzare per raggiungere l'obiettivo.
+
+Oltre ai tool un agente ha bisogno di memoria per tenere traccia del contesto e delle azioni eseguite. La memoria può essere a breve termine (memoria della chat) o a lungo termine (memoria persistente).
+
+
+
+
+
+
+# Workspace Indexing
+Ma Github copilot vede la mia intera codebase?
+
+Non prende l'intera codebase come contesto (non finisce tutto nel system prompt) ma cerca semanticamente attraverso tutto il workspace e determina quali file sono rilevanti per la richiesta fatta. Come specificato nel video del canale ufficiale di VSC[Yes, GitHub Copilot knows about your whole codebase](https://www.youtube.com/watch?v=h0AT3GagswQ) Github Copilot sfrutta il search engine di Github chiamato Blackbird che indicizza il codebase e consente di fare ricerche semantiche all'interno del codebase stesso.
+
+Come sappiano se il code base è stato indicizzato? Andando nell'icona in basso si può vedere lo stato di indicizzazione del codebase. Se non è indicizzato  si va nella command palette e si sceglie `Chat: Build local Workspace Index` per indicizzare il codebase aperto in VSC o quello remoto.
+![indexing](./doc/index.png)
+Una volta indicizzato appare 
+![indexing2](./doc/index2.png)
+
+Se facciamo domande in edit mode senza dargli un contesto è difficile che dia risposte corrette. Il problema è che in edit non abbiamo accesso a @workspace ma abbiamo #codebase (che funziona sia in edit ed agent mode)
+
+Che differenza c'è tra `#codebase` e `@workspace`?
+
+`#codebase` è una variabile di chat che è parte dell'estensione di Github copilot e che consente di accedere al contesto del codice sorgente del progetto aperto in VS Code (è quindi un `context identifier` che indica di tenere in considerazione tutto il codebase).
+
+`@workspace` è un `chat participants` ossia è un LLM hosted da Github che conosce il codice del codebase ed ha uno strato di indicizzazione che consente di fare ricerche semantiche all'interno del codebase stesso. 
+
+
+
+
+
 # Customs Instructions
 Permettono di diminuire le ripetizioni e di settare delle istruzioni di base (preferenze personali, coding standards, security requirements, and best practices) per tutte le chat che avremo con Copilot. In locale sono conservate in `.github/copilot-instruction.md`.
 
@@ -53,12 +102,7 @@ You are a dedicated Angular developer who thrives on leveraging the absolute lat
  Oppure metterli in locale in `.vscope/mcp.json` del progetto:
 
 
-# Custom Chat Modes
-Cliccando sulla combox dei modi è possibile oltre che scegliere i vari chat mode (Ask, Edit, Agent) anche crearne di nuovi selezionando "Configure Modes". L?idea è avere dei custom chat modes che definiscono specific comportamenti in base a Tool e quindi ad MCP diversi a seconda delle esigenze: 
-0. Create a new chat mode
-1. Select the tools you want to enable for this chat mode
-2. Select the MCP (Multi-Channel Prompt) you want to use for this chat mode
-3. Save the new chat mode with a name and description
+
 
 # Prompt Files
 
@@ -121,3 +165,4 @@ Creo il prompt file `prd_creation.prompt.md` per generare dei Product Requiremen
     -   Eseguire i development task generati al punto 2 uno alla volta:
         Follow instructions in Task_execution.prompt.md.
         inizia d eseguire la tasklist
+

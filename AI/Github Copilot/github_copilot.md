@@ -35,7 +35,7 @@ E' sempre bene specificarlo nella chat se invece di fare domande generiche si vu
 
 Notare che è possibile riusare dei prompts usando la UP ARROW e DOWN ARROW per navigare tra i precedenti messaggi.
 
-### Shortcuts
+### Comandi riutilizzabili
 per non rieseguire lo stesso task si usano gli **slach command** _sottolineando il codice_ ed inserendo `/` per poi avere una lista di comandi disponibili. Ad esempio:
  - `/doc` per documentare il codice,
  - `/edit` per modificare il codice, 
@@ -44,15 +44,13 @@ per non rieseguire lo stesso task si usano gli **slach command** _sottolineando 
 - `/generate` per aggiungere codice,
 - `/test` per testra eil codice,
 
-Notare che premendo `/` nella chat si possono avere + comandi rispetto all'inline chat, come ad esempio `/new` che permette di creare un nuovo file o `/clear` che pulisce la history della chat.
+
 
 
 ### Modify & Review
 Una volta che si sottolinea del codice appare una icona che se cliccata apre una dropdown con due opzioni:
 - `Modify` per modificare il codice selezionato -> apre l'inline chat
 - `Review` apre un pannello per revisionare il codice selezionato con la possibilità di accettare o declinare i suggerimenti
-
-
 
 
 
@@ -179,7 +177,7 @@ Nella chat si indicheranno come reference le istruzioni utilizzate
 Se si clicca sulla rotelina è possibile selezionare la voce di menu __Generate Agent Instruction__ che crea automaticamente un file di istruzioni di base.
 
 ## Multipliers
-- coso sono le premium multipliers? i multipliers (moltiplicatori) servono a determinare quante "premium requests" vengono consumate ogni volta che si utilizza un determinato modello AI. Ogni modello ha un premium request multiplier che rappresenta la quantità di risorse computazionali necessarie per servire una richiesta: modelli più potenti hanno moltiplicatori più alti, poiché consumano più capacità del sistema rispetto a modelli leggeri. **1× indica una richiesta premium standard** (50 nel piano free, 300 nel piano business a 19€ e 1000 nel piano enterprise a 39€ )
+Coso sono le premium multipliers? i multipliers (moltiplicatori) servono a determinare quante "premium requests" vengono consumate ogni volta che si utilizza un determinato modello AI. Ogni modello ha un premium request multiplier che rappresenta la quantità di risorse computazionali necessarie per servire una richiesta: modelli più potenti hanno moltiplicatori più alti, poiché consumano più capacità del sistema rispetto a modelli leggeri. **1× indica una richiesta premium standard** (50 nel piano free, 300 nel piano business a 19€ e 1000 nel piano enterprise a 39€ )
 Per vedere quante premium request abbiamo utilizzare il pannello che permette di spegnere la funzionalità su i vari tipi di file:
 ![panel](./doc/copilot1.png)
 
@@ -187,9 +185,7 @@ Per vedere quante premium request abbiamo utilizzare il pannello che permette di
 # Shortcuts
 - `cmd + I` per aprire la chat inline per code completion
 - `cmd + ctrl + I` per aprire la chat panel
-
-
-- come impostare checkpoints di chat?
+- Notare che premendo `/` nella chat si possono avere + comandi rispetto all'inline chat, come ad esempio `/new` che permette di creare un nuovo file o `/clear` che pulisce la history della chat.
 
 
 # MCP

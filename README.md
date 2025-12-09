@@ -21,6 +21,6 @@
 - [React](React/indice.md)
 - [SQL](SQL/indice.md)
 - [Svelte](Svelte/indice.md)
-- [Tools](Tools/indice.md)
+- [Tools & Software](Tools&Software/indice.md)
 - [Typescript](Typescript/indice.md)
 - [Vue3](Vue3/indice.md)
